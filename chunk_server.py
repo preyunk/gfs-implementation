@@ -106,10 +106,6 @@ def start(port):
 
 
 if __name__ == "__main__":
-
-    # p = Pool(len(cfg.chunkserver_locs))
-    # ret = p.map(start, cfg.chunkserver_locs)
-    # print(ret)
     for loc in cfg.chunkserver_locs:
         p = Process(target=start, args=(loc,))
         p.start()
